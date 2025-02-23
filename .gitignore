@@ -1,162 +1,701 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
 
-# C extensions
-*.so
+############################################################################################################################
+####################################################################################################################
+class Mashin:
+    """*mashin sazi*"""
+    def __init__(self, color: str, tedad_dar: int) -> int:
+        self.rang = color
+        self.model = "0"
+        self.brand = "ford"
+        self.tedad_dar = tedad_dar
+        print("mano print kon")
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+    def mamad(self, color, tedad_dar:int)-> int:
+        """baes namayesh tedad dar ha mishavad"""
+        print(int(tedad_dar))
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+    # برای اینکه مقدار  print(Mashin("sabz",5)) به صورت ماشین ابجکت در خروجی چاپ نشود که ادرس حافظه رو بهمون بده از تابع اس تی ار استفاده کردم
+    # def __str__(self):
+    #     return f"{self.rang}, {self.rang}, {self.tedad_dar} "
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+print("_0_")
+Mashin("sabz",5)
+print(Mashin("sabz",5))
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
+print("__1__")
+x=Mashin("sabz",5)
+print(x.rang)
 
-# Translations
-*.mo
-*.pot
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+print("______2______")
+x.rang="abbi"
+print(x.rang)
 
-# Flask stuff:
-instance/
-.webassets-cache
+print("_________3_________")
+y=Mashin("germaz",6)
+print(y.rang)
 
-# Scrapy stuff:
-.scrapy
+print("____________4______________")
+x.mamad("b",66)
+Mashin.mamad(x, "b", 66)
+# وقتی این خط اجرا شود:
+# پایتون آن را به این شکل در نظر می‌گیرد:
+# Mashin.mamad(x, "b", 66)
+# شیء ایکس به عنوان سلف به تابع فرستاده می‌شود.
+# مقدار "b" به color داده می‌شود.
+# مقدار 66 به tedad_dar داده می‌شود.
+# تابع print(int(tedad_dar)) مقدار 66 را در خروجی چاپ می‌کند.
 
-# Sphinx documentation
-docs/_build/
 
-# PyBuilder
-.pybuilder/
-target/
+# چرا print() جای return را نمی‌گیرد؟
+# تابع print() فقط مقدار را در خروجی نمایش می‌دهد اما مقدار را برنمی‌گرداند.
+# در حالی که return مقدار را به جایی که تابع فراخوانی شده است، ارسال می‌کند.
 
-# Jupyter Notebook
-.ipynb_checkpoints
+#نکته مهم: چون تابع را مستقیماً صدا نمیزنید مقدار ناان تولید می‌شود، ولی چون آن را چاپ نمی‌کنید، دیده نمی‌شود. 
+# اما در کد زیر چون خواستیم پرینت کند مقدار نان را چاپ میکند
+# print(Mashin.mamad(x, "b", 66))
 
-# IPython
-profile_default/
-ipython_config.py
+#######################################################
+# متد __init__ نیازی به print() ندارد زیرا هدف آن مقداردهی اولیه ویژگی‌های شیء است.
+# این متد به طور خودکار در هنگام ایجاد یک شیء اجرا می‌شود ولی مقدار برگشتی ندارد.
 
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
+print("______________________5______________________")
+Mashin.mamad(x, "b", 66)
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
 
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
+print("_____________________________6________________________")
+print(Mashin.mamad(x, "b", 66))
+# چرا اینجا "منوپرینت کن" چاپ نشد
+# جواب: در اینجا فقط متد ممد اجرا میشه نه اینیت پس  "منوپرینت کن" اجرا نمیشود
 
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
-.pdm.toml
-.pdm-python
-.pdm-build/
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
+print(dir(y))
+# تمام متدهای کلاس
 
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
+print("__________________________________________7________________________")
+x.mamad("b",66)
+print(dir(x))
+# جالبه که دقیقا خروجی اش مانند وای است
 
-# SageMath parsed files
-*.sage.py
+print("______________________________________________________8__________________________")
+print(Mashin.__base__)
+print(int.__base__)
+print(object.__base__)
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
 
-# Spyder project settings
-.spyderproject
-.spyproject
 
-# Rope project settings
-.ropeproject
 
-# mkdocs documentation
-/site
+print("\n######################################################## HOMEWORK ############################################################")
+############################################################################################################################
+# تمرین جلسه 12 _ روز جمعه:
+# یک کلاس برای حساب بانکی
+# با ویژگی های:
+# نام و نام خانوادگی، شماره حساب، نوع حساب، موجودی
+# با متدهای:
+# نمایش موجودی حساب و نمایش اطلاعات حساب و واریز و برداشت
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+# تمرین جلسه 12 _ روز جمعه:
+# یک کلاس برای حساب بانکی
+# با ویژگی های:
+# نام و نام خانوادگی، شماره حساب، نوع حساب، موجودی
+# با متدهای:
+# نمایش موجودی حساب و نمایش اطلاعات حساب و واریز و برداشت
 
-# Pyre type checker
-.pyre/
+class HesabeBanki:
+    """*حساب بانکی*"""
+    def __init__(self, name, family,shomare_hesaab,hesab_type, mojoodi):   
+        self.name=name
+        self.family=family
+        self.shomare_hesaab=shomare_hesaab
+        self.hesab_type=hesab_type
+        self.mojoodi=mojoodi
+        # print(f"name: {name} , family: {family},shomare_hesaab: {shomare_hesaab}, type_hesab: {hesab_type}, mojoodi:{mojoodi}")
+    def vaarizy(self, meghdaare_varizy):
+        self.mojoodi+=meghdaare_varizy
+        print (f"meghdare mojoodi:{self.mojoodi}")
+        
+    
+    def bardasht(self, meghdaare_bardasht):
+        self.mojoodi-=meghdaare_bardasht
+        return f"meghdare mojoodi:{self.mojoodi}"
+    
+print("____1____")        
+h_1=HesabeBanki("fe","mahdian",1234,"ghrzolhasane",12)
+print(h_1.name,h_1.family)
+print(f"shomare_hesaab: {h_1.shomare_hesaab}")
+print(f"hesab_type: {h_1.hesab_type}")
+print(f"mojoodi:{h_1.mojoodi}")
 
-# pytype static type analyzer
-.pytype/
+print("_________2________")    
+h_1.vaarizy(4)    
 
-# Cython debug symbols
-cython_debug/
+print("______________3___________")    
+print(h_1.bardasht(1))
+       
 
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+
+# در کد شما، هنگام اجرای print(h_1), پایتون نمی‌داند که چطور شیء h_1 را نمایش دهد.
+# به همین دلیل، نمای پیش‌فرض یک شیء را چاپ می‌کند:
+# <__main__.HesabeBanki object at 0x0000022E29E07230>
+# 🔹 این یعنی:
+#     HesabeBanki یک کلاس است.
+#     h_1 یک شیء (instance) از این کلاس است.
+#     0x0000022E29E07230 آدرس حافظه‌ای است که این شیء در آن ذخیره شده است.
+#     چون پایتون نمی‌داند که چگونه این شیء را نمایش دهد، این مقدار پیش‌فرض را چاپ می‌کند.
+# 
+# 
+# چطور از نمایش <__main__.HesabeBanki object at 0x...> جلوگیری کنیم؟
+# 📌 راه‌حل: تعریف __str__
+# با تعریف متد __str__, می‌توانیم به پایتون بگوییم هر وقت print(h_1) اجرا شد، چه چیزی نمایش داده شود.
+#  def __str__(self):
+#         این متد مشخص می‌کند که هنگام print(h_1) چه چیزی نمایش داده شود
+#         return f"name: {self.name}, family: {self.family}, shomare_hesaab: {self.shomare_hesaab}, type_hesab: {self.type_hesab}, mojoodi: {self.mojoodi}"
+# 🔹 این یعنی:
+#          زمانی که print(h_1) اجرا می‌شود، پایتون بررسی می‌کند که آیا کلاس HesabeBanki متد __str__ دارد یا نه.
+# ✅ اگر __str__ تعریف شده باشد، مقدار برگشتی آن را چاپ می‌کند.
+# ✅ اگر __str__ تعریف نشده باشد، پایتون مقدار پیش‌فرض (<__main__.Class object at ...>) را نمایش می‌دهد.
+
+
+
+print("\n######################################################## OTHER METHOD ##########################################################")
+#########################################################  خودم ######################################################################
+
+print("#🚀  مثال‌های __init__، __str__، __len__، __add__ و __getitem__")
+
+print("#____1______")
+
+# 🔹 __init__ (مقداردهی اولیه هنگام ساخت شیء)
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+p = Person("Ali", 25)
+print(p.name, p.age)  # مقداردهی اولیه انجام شده
+
+# ✅ خروجی:
+# Ali 25
+
+
+print("#___________2________________")
+# 🔹 __str__ (تعیین نحوه نمایش شیء هنگام print())
+# خاصیت اصلی __str__ این است که تعیین می‌کند یک شیء هنگام print() چگونه نمایش داده شود.
+# اگر __str__ را تعریف نکنیم، پایتون مقدار پیش‌فرض را که آدرس حافظه‌ی شیء است، نمایش می‌دهد
+#  آدرس حافظه مثل : <__main__.Car object at 0x7f8b7c2d6b50>
+
+class Car:
+    def __init__(self, brand):
+        self.brand = brand
+
+    def __str__(self):
+        return f"Car brand: {self.brand}"
+
+c = Car("BMW")
+print(c)  # __str__ اجرا می‌شود
+
+# ✅ خروجی:
+# Car brand: BMW
+
+
+print("#__________________3________________")
+# 🔹 __len__ (مقدار برگشتی len(obj))
+
+class Book:
+    def __init__(self, title, pages):
+        self.title = title
+        self.pages = pages
+
+    def __len__(self):
+        return self.pages  # تعداد صفحات را برمی‌گرداند
+
+b = Book("Python Basics", 300)
+print(len(b))  # مقدار برگشتی __len__
+
+# ✅ خروجی:
+# 300
+
+
+print("#_______________________________4________________")
+# 🔹 __add__ (تعریف رفتار + بین اشیاء کلاس)
+
+class BankAccount:
+    def __init__(self, balance):
+        self.balance = balance
+
+    def __add__(self, other):  # جمع دو حساب بانکی
+        return BankAccount(self.balance + other.balance)
+
+a1 = BankAccount(1000)
+a2 = BankAccount(2000)
+
+a3 = a1 + a2  # معادل a1.__add__(a2)
+print(a3.balance)
+
+# ✅ خروجی:
+# 3000
+# 📌 بدون __add__، اجرای a1 + a2 خطا می‌داد!
+
+
+print("#________________________________________5________________")
+# . اگر قرار بود سه یا چهار پارامتر با هم جمع شوند، چه باید کرد؟
+# اگر بخواهید سه یا چهار شیء از کلاس BankAccount را با هم جمع کنید،
+# می‌توانید متد __add__ را تغییر دهید تا بتواند تعداد متغیر بیشتری بپذیرد. یکی از راه‌های متداول استفاده از *args است:
+
+class BankAccount:
+    def __init__(self, balance):
+        self.balance = balance
+
+    def __add__(self, *others):  # پذیرش چندین حساب بانکی
+        total_balance = self.balance + sum(other.balance for other in others)
+        return BankAccount(total_balance)
+
+a1 = BankAccount(1000)
+a2 = BankAccount(2000)
+a3 = BankAccount(3000)
+
+a4 = a1 + a2 + a3  # حالا امکان جمع سه شیء وجود دارد
+print(a4.balance)  # خروجی: 6000
+
+
+print("#___________________________________________________6________________")
+# 🔹 __getitem__ (تعریف رفتار [index] روی شیء)
+
+class Team:
+    def __init__(self, members):
+        self.members = members  # لیست اعضای تیم
+
+    def __getitem__(self, index):
+        return self.members[index]  # مقدار مربوط به ایندکس داده شده را برمی‌گرداند
+
+t = Team(["Ali", "Reza", "Sara"])
+print(t[0])  # مقدار ایندکس ۰ را برمی‌گرداند
+
+# ✅ خروجی:
+# Ali
+
+print("\n###############################################################################################################################")
+############################################################################################################################
+
+
+# کلاس چند ضلعی
+# داخلش دو متد محیط و مساحت دارد
+# داخل متد محیط چاپ شود محیط چند ضعلی
+# داخل متد مساحت چاپ شود مساحت چندضلعی
+# 
+# 
+# سه تا کلاس دایره مستطیل مثلث
+# دایره شعاع را بگیرد و مستطیل طول و عرض
+# هر سه تا از کلاس چند ضعلی ارث بری میکنند
+# اما هر کلاس محیط و مساحت خودش را چاپ میکند
+
+
+class ChandZelii:
+    def __init__(self):
+        pass
+
+
+    def moohit(self):
+        print("mohit chandzelii")
+       
+    def massahat(self):
+        print("masahat chandzelii")
+               
+       
+class Mostatil(ChandZelii):
+    def __init__(self,tool, arz):
+        self.tool=tool
+        self.arz=arz
+    def mohit(self):
+        mohit = 2 * (self.tool+ self.arz)
+        print(f"mohit = {mohit}")
+    def masaahat(self):
+        masaahat = self.tool* self.arz
+        print(f"masaahat= {masaahat}")
+       
+class Mosalas(ChandZelii):
+    def __init__(self,ghaeede,ertefaa):
+        self.ghaeede=ghaeede
+        self.ertefaa=ertefaa
+    def mohit(self):
+        mohit=  (self.ghaeede * 3)
+        print(f"mohit = {mohit}")
+    def masaahat(self):
+        masaahat= (self.ghaeede * self.ertefaa) * 0.5
+        print(f"masaahat= {masaahat}")
+       
+class Daayere(ChandZelii):
+    def __init__(self):
+        self.shooaa=int(input("vared kon shoaa: "))
+    def mohit(self):
+        mohit = 2 * 3.14 *self.shooaa
+        print(f"mohit = {2} * {3.14} * {self.shooaa}  =  {mohit}")
+    def masaahat(self):  
+        masaahat = 3.14 * (self.shooaa**2)
+        print(f"masaahat= {masaahat}")
+
+
+# x=Mostatil(20,40)
+# x.mohit()
+
+
+y=Daayere(7)
+y.mohit()
+
+
+###########################################################################################
+# حل تمرین جلسه قبل
+# # حل تمرین جلسه 12 _ روز جمعه:
+# # یک کلاس برای حساب بانکی
+# # با ویژگی های:
+# # نام و نام خانوادگی، شماره حساب، نوع حساب، موجودی
+# # با متدهای:
+# # نمایش موجودی حساب و نمایش اطلاعات حساب و واریز و برداشت
+
+# # تمرین جلسه 12 _ روز جمعه:
+# # یک کلاس برای حساب بانکی
+# # با ویژگی های:
+# # نام و نام خانوادگی، شماره حساب، نوع حساب، موجودی
+# # با متدهای:
+# # نمایش موجودی حساب و نمایش اطلاعات حساب و واریز و برداشت
+
+
+class Bank:
+    shomare=123
+    def __init__(self,name,fname,b_type):
+        self.name = name
+        self.fname = fname
+        self.amount = 0
+        self.b_type = b_type
+        self.shomare = Bank.shomare
+        
+        Bank.shomare=Bank.shomare+1
+        #تا هر دفعه یک شماره به شماره اضافه شود
+
+    def show_amount(self):
+        print(self.amount)
+
+    def show_ac(self):
+        print(f"name: {self.name}\nfname: {self.fname}\namount: {self.amount}\nsh_ac: {self.shomare}")
+
+    def variz(self, meghdar):
+        self.amount = self.amount + meghdar
+        print(f"new amount: {self.amount}")
+
+    def bardasht(self, meghdar):
+        if self.amount - meghdar < 0:
+            print(f"mojoodi kafi nist: {self.amount}")
+        else:
+            self.amount = self.amount - meghdar
+            print(f"new amount: {self.amount}")
+x=Bank("fe","mn","jary")
+y=Bank("fe2","mn2","jary2")
+print(f"bank: {Bank.shomare}")
+print(f"x: {x.shomare}")
+print(f"y: {y.shomare}")
+
+############################################################  ارث بری    #####################################################
+
+class Animal:
+    def __init__(self, number_pa=0, nezhad="persian"):
+        self.number_pa = number_pa
+        self.nezhad = nezhad
+    
+    def khordan(self):
+        print("Animal")
+
+class Cat(Animal):
+    def __init__(self, speed=0, number_pa=0, nezhad="persian"):
+        self.number_pa = number_pa
+        self.nezhad = nezhad
+        self.speed = speed  # مقداردهی متغیر جدید مخصوص `Cat`
+    
+    def khordan(self):
+        print("Cat")
+
+x = Cat(100, 4, "persian")  # دیگر خطا نمی‌دهد
+x.khordan()
+
+#####################################################  ارث بری و مبحث سوپر #####################################################
+
+######### بدون سوپر ##########
+class Animal:
+    def __init__(self, number_pa=0, nezhad="persian"):
+        self.number_pa = number_pa
+        self.nezhad = nezhad
+    
+    def khordan(self):
+        print("Animal")
+
+class Cat(Animal):
+    def __init__(self, speed=0, number_pa=0, nezhad="persian"):
+        Animal.__init__(self, number_pa, nezhad)  # مستقیماً متد __init__ کلاس والد را صدا می‌زنیم
+        self.speed = speed
+    
+    def khordan(self):
+        print("Cat")
+
+x = Cat(100, 4, "persian")
+x.khordan()   # خروجی: Cat
+
+
+
+########### سوپر #########
+class Animal:
+    def __init__(self, number_pa=0, nezhad="persian"):
+        self.number_pa = number_pa
+        self.nezhad = nezhad
+    
+    def khordan(self):
+        print("Animal")
+
+class Cat(Animal):  # متد khordan را بازنویسی نمی‌کنیم
+    def __init__(self, speed=0, number_pa=0, nezhad="persian"):
+        super().__init__(number_pa, nezhad)
+        self.speed = speed
+
+x = Cat(100, 4, "persian")
+x.khordan()  # خروجی: Animal
+
+########### مثال کاملتر از سوپر #########
+
+
+class Animal:
+    def __init__(self, number_pa, nezhad):
+        self.number_pa = number_pa
+        self.nezhad = nezhad
+    
+    def khordan(self):
+        print("Animal")
+
+class Cat(Animal):
+    def __init__(self, speed, number_pa, nezhad):
+        # ۱. super() به کلاس والد (Animal) اشاره دارد.
+        # ۲. super().__init__(...) باعث می‌شود متد __init__ کلاس Animal اجرا شود.
+        # ۳. این کار باعث مقداردهی اولیه به number_pa و nezhad از کلاس Animal می‌شود.
+        super().__init__(number_pa, nezhad)
+
+        # ۴. مقداردهی ویژگی جدید مخصوص کلاس Cat
+        self.speed = speed
+    
+    def khordan(self):
+        print("Cat")  # نمایش نام کلاس فرزند
+
+        # ۵. super().khordan() باعث اجرای متد khordan در کلاس والد (Animal) می‌شود.
+        # ۶. در اینجا ابتدا "Cat" چاپ می‌شود و سپس "Animal"
+        super().khordan()
+
+# ایجاد یک شی از کلاس Cat
+x = Cat(100, 4, "persian")
+
+# صدا زدن متد khordan
+x.khordan()
+
+
+
+##################################################### ارث بری چندگانه #####################################################
+روش خوبی نیست
+
+
+class A:
+    def __init__(self):
+        self.i = 5
+
+class B(A):
+    def __init__(self):
+        A.__init__(self)
+        self.i = self.i + 9
+
+class C(A):
+    def __init__(self):
+       A.__init__(self)
+
+class D(B, C):
+    def __init__(self):
+       A.__init__(self)
+       # روش خوبی نیست و باید از سوپراستفاده شود
+       # اما این کد به اینصورت کار میکند که ابتدا بی اجرا میشه،
+       # و بعد سی اجرا میشه و حالا مقدار سی جایگزین مقدار بی میشه. چون اخری بوده
+
+
+x = D()     # ایجاد یک نمونه از کلاس D
+print(x.i)  # مقدار i را نمایش می‌دهد
+
+################################################################ و  ارث بری چندگانه  MRO  #############################################
+# print("################## MRO ############################################")
+# روش خوب و درست استفاده از سوپر است:
+# super().__init__() تضمین می‌کند که مقداردهی اولیه والدین تنها یک‌بار انجام شود، اما A.__init__(self) این کار را نمی‌کند 
+# و باعث اجراهای اضافی یا ناقص می‌شود.
+
+
+class A:
+    def __init__(self):
+        self.i = 5
+
+class B(A):
+    def __init__(self):
+        super().__init__()
+        self.i = self.i + 9
+
+class C(A):
+    def __init__(self):
+        super().__init__()
+
+class D(B, C):
+#بخاطر کد بالا که دی از بی و سی ارث بری میکنه چندگانه نامیده میشه
+#چون یک کلاس فرزند می‌تواند خصوصیات و متدهای بیش از یک کلاس والد را به ارث ببرد. بنابراین ارث‌بری چندگانه" نامیده می‌شود
+    def __init__(self):
+        super().__init__()
+        #سوپر باعث میشه اول از بی ارث بری کند. اگر بی مقدار پسس را داشت به سراغ سی میره
+        #در ارث‌بری چندگانه، سوپر به جای اینکه مستقیماً
+        # فقط کلاس والد مشخصی را صدا بزند،از ام آر اوو پیروی می‌کند
+
+
+x = D()     # ایجاد یک نمونه از کلاس D
+print(x.i)  # مقدار i را نمایش می‌دهد
+
+# print(D.mro())  # نمایش ترتیب جستجوی متدها (MRO)#
+#خب ترتیب چی بوده
+
+def execute_func(func):
+    func()  # در اینجا، func یک پارامتر است که به یک تابع اشاره می‌کند.
+
+def say_hello():
+    print("Hello!")
+
+execute_func(say_hello)  # اینجا به پارامتر func تابع say_hello را می‌دهیم
+
+#####################################################################################################################
+#####################################################################################################################
+# بله، یک کلاس در پایتون می‌تواند بدون متد __init__ هم مفید باشد،
+# اما بستگی به هدف شما دارد. در اینجا چند حالت استفاده از کلاس بدون __init__ را بررسی می‌کنیم:
+# 1. کلاس فقط برای گروه‌بندی داده‌ها و متدها
+# 
+# گاهی اوقات از یک کلاس فقط برای نگهداری متدها (توابع مرتبط) استفاده می‌کنیم، بدون نیاز به مقداردهی اولیه متغیرهای نمونه.
+
+class MathOperations:
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+    @staticmethod
+    def multiply(a, b):
+        return a * b
+
+# استفاده بدون نیاز به ایجاد نمونه از کلاس
+print(MathOperations.add(3, 5))  # 8
+print(MathOperations.multiply(4, 6))  # 24
+
+# 🔹 این کلاس نیازی به __init__ ندارد، زیرا هیچ متغیر نمونه‌ای (instance variables) در آن وجود ندارد.
+# 2. استفاده از کلاس به عنوان فضای نام (Namespace)
+# 
+# اگر بخواهید یک مجموعه از ثابت‌ها (یا داده‌های مرتبط) را در یک مکان سازمان‌دهی کنید:
+
+class Constants:
+    PI = 3.14159
+    E = 2.71828
+    GRAVITY = 9.81
+
+print(Constants.PI)  # 3.14159
+# 
+# 🔹 این کلاس فقط برای نگهداری داده‌ها استفاده می‌شود، پس نیازی به __init__ ندارد.
+# 3. کلاس‌هایی که فقط از متدهای کلاس (classmethod) استفاده می‌کنند
+# 
+# اگر نیازی به متغیرهای نمونه نداشته باشید و فقط بخواهید متدهای سطح کلاس داشته باشید:
+
+class Counter:
+    count = 0  # متغیر کلاس
+
+    @classmethod
+    def increment(cls):
+        cls.count += 1
+        return cls.count
+
+print(Counter.increment())  # 1
+print(Counter.increment())  # 2
+
+# 🔹 این کلاس بدون __init__ همچنان می‌تواند مقدار count را بین همه نمونه‌های کلاس به اشتراک بگذارد.
+# 4. کلاس‌های داده‌ای بدون مقداردهی اولیه
+
+# اگر از dataclass استفاده کنید، پایتون خودش __init__ را ایجاد می‌کند:
+
+from dataclasses import dataclass
+
+@dataclass
+class Point:
+    x: int
+    y: int
+
+p = Point(3, 4)
+print(p.x, p.y)  # 3 4
+
+# 🔹 حتی اگر خودمان __init__ را ننویسیم، dataclass به‌طور خودکار آن را برای ما ایجاد می‌کند.
+# 📌 نتیجه‌گیری:
+# 
+#     اگر کلاس فقط شامل متدهای استاتیک (@staticmethod) یا متدهای کلاس (@classmethod) باشد، نیازی به __init__ ندارد.
+#     اگر کلاس فقط برای نگهداری داده‌های ثابت استفاده شود، نیازی به __init__ نیست.
+#     اگر از dataclass استفاده کنید، پایتون خودش __init__ را می‌سازد.
+#     اما اگر بخواهید برای هر نمونه از کلاس داده‌های خاصی را مقداردهی کنید، __init__ ضروری می‌شود.
+
+#####################################################################################################################
+#####################################################################################################################
+
+# ✅ isinstance(obj, class) بررسی می‌کند که آیا obj نمونه‌ای از class است یا نه.
+
+# مثال عملی: مدیریت اطلاعات مشتری
+# فرض کنید دو کلاس داریم:
+#     کلاس Customer برای ایجاد اطلاعات مشتری.
+#     کلاس CustomerManager برای مدیریت و ذخیره مشتری‌ها.
+#
+# گام ۱: تعریف کلاس Customer
+class Customer:
+    def __init__(self, name, age, email):
+        self.name = name
+        self.age = age
+        self.email = email
+
+    def show_info(self):
+        return f"Name: {self.name}, Age: {self.age}, Email: {self.email}"
+# 🔹 این کلاس اطلاعات مشتری را ذخیره می‌کند و متدی (show_info) برای نمایش اطلاعات دارد.
+
+
+# گام ۲: تعریف کلاس CustomerManager
+class CustomerManager:
+    def __init__(self):
+        self.customers = []  # لیست برای ذخیره مشتری‌ها
+
+    def add_customer(self, customer):
+        """یک نمونه از کلاس Customer را می‌گیرد و ذخیره می‌کند."""
+        if isinstance(customer, Customer):  # بررسی می‌کند که ورودی از نوع Customer باشد
+            self.customers.append(customer)
+        else:
+            print("Invalid customer!")
+
+    def show_all_customers(self):
+        """نمایش همه مشتری‌های ذخیره‌شده"""
+        for customer in self.customers:
+            print(customer.show_info())  # استفاده از متد show_info کلاس Customer
+# 🔹 این کلاس یک لیست از مشتری‌ها را نگه می‌دارد و متدهایی برای اضافه کردن و نمایش مشتری‌ها دارد.
+
+
+# گام ۳: استفاده از این کلاس‌ها
+# ایجاد چند مشتری
+c1 = Customer("Ali", 30, "ali@example.com")
+c2 = Customer("Sara", 25, "sara@example.com")
+
+# ایجاد مدیر مشتری‌ها
+manager = CustomerManager()
+
+# افزودن مشتری‌ها به کلاس مدیریت
+manager.add_customer(c1)
+manager.add_customer(c2)
+
+# نمایش اطلاعات همه مشتری‌ها
+manager.show_all_customers()
+
+# ✅ خروجی:
+# Name: Ali, Age: 30, Email: ali@example.com
+# Name: Sara, Age: 25, Email: sara@example.com
+
+#####################################################################################################################
+#####################################################################################################################
